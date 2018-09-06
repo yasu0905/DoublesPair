@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="コート数"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="人数"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="@+id/spbtn_player"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibtn_shuffle"
+        style="@android:style/Widget.Material.ImageButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/white"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spbtn_player"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/badminton_shuttle_ra" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shuttle_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_shuffle">
+
+        <ImageView
+            android:id="@+id/iv_court_1"
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/coart" />
+
+        <ImageView
+            android:id="@+id/iv_court_2"
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_court_1"
+            app:srcCompat="@drawable/coart" />
+
+        <ImageView
+            android:id="@+id/iv_court_3"
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_court_2"
+            app:srcCompat="@drawable/coart" />
+
+        <ImageView
+            android:id="@+id/iv_court1_left1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_1"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_1"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_1"
+            app:layout_constraintVertical_bias="0.19999999"
+            app:srcCompat="@drawable/icon_1" />
+
+        <ImageView
+            android:id="@+id/iv_court1_left2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_1"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_1"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_1"
+            app:layout_constraintVertical_bias="0.8"
+            app:srcCompat="@drawable/icon_2" />
+
+        <ImageView
+            android:id="@+id/iv_court1_right1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_1"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_1"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_1"
+            app:layout_constraintVertical_bias="0.19"
+            app:srcCompat="@drawable/icon_3" />
+
+        <ImageView
+            android:id="@+id/iv_court1_right2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_1"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_1"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_1"
+            app:layout_constraintVertical_bias="0.8"
+            app:srcCompat="@drawable/icon_4" />
+
+        <ImageView
+            android:id="@+id/iv_court2_left1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_2"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_2"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_2"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_2"
+            app:layout_constraintVertical_bias="0.19"
+            app:srcCompat="@drawable/icon_5" />
+
+        <ImageView
+            android:id="@+id/iv_court2_left2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_2"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_2"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_2"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_2"
+            app:layout_constraintVertical_bias="0.8"
+            app:srcCompat="@drawable/icon_6" />
+
+        <ImageView
+            android:id="@+id/iv_court2_right1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_2"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_2"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_2"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_2"
+            app:layout_constraintVertical_bias="0.19"
+            app:srcCompat="@drawable/icon_7" />
+
+        <ImageView
+            android:id="@+id/iv_court2_right2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_2"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_2"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_2"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_2"
+            app:layout_constraintVertical_bias="0.8"
+            app:srcCompat="@drawable/icon_8" />
+
+        <ImageView
+            android:id="@+id/iv_court3_left1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_3"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_3"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_3"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_3"
+            app:layout_constraintVertical_bias="0.19"
+            app:srcCompat="@drawable/icon_9" />
+
+        <ImageView
+            android:id="@+id/iv_court3_left2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_3"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_3"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_3"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_3"
+            app:layout_constraintVertical_bias="0.8"
+            app:srcCompat="@drawable/icon_10" />
+
+        <ImageView
+            android:id="@+id/iv_court3_right1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_3"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_3"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_3"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_3"
+            app:layout_constraintVertical_bias="0.19"
+            app:srcCompat="@drawable/icon_11" />
+
+        <ImageView
+            android:id="@+id/iv_court3_right2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_court_3"
+            app:layout_constraintEnd_toEndOf="@+id/iv_court_3"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="@+id/iv_court_3"
+            app:layout_constraintTop_toTopOf="@+id/iv_court_3"
+            app:layout_constraintVertical_bias="0.8"
+            app:srcCompat="@drawable/icon_12" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/spbtn_court"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="選択"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/spbtn_player"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/spbtn_player"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:text="選択"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toEndOf="@+id/spbtn_court"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+</android.support.constraint.ConstraintLayout>
