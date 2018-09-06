@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //定数宣言
@@ -41,19 +42,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spbt_court.setOnClickListener(this);
         spbt_player.setOnClickListener(this);
 
-
+        //実行ボタンの設定
         ImageButton ibt_shuffle = findViewById(R.id.ibtn_shuffle);
         ibt_shuffle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //ボタン感触としてバイブ起動
                 Vibrator vib = (Vibrator)getSystemService(VIBRATOR_SERVICE);
                 vib.vibrate(100);
 
-                //プレーヤーのImageViewを初期化（空白）
-                initImageView();
+                //コート数、人数選択チェック
+                if (((Button)findViewById(R.id.spbtn_court)).getText().toString() == "選択" ||
+                        ((Button)findViewById(R.id.spbtn_player)).getText().toString() == "選択"){
+                    Toast.makeText(MainActivity.this, "コート数もしくは人数を選択してください", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
                 int court_num = Integer.parseInt(((Button)findViewById(R.id.spbtn_court)).getText().toString());//Integer.parseInt((String)((Spinner)findViewById(R.id.spr_court)).getSelectedItem());
                 int player_num = Integer.parseInt(((Button)findViewById(R.id.spbtn_player)).getText().toString());//Integer.parseInt((String)((Spinner)findViewById(R.id.spr_person)).getSelectedItem());
+
+                //プレーヤーのImageViewを初期化（空白）
+                initImageView();
 
                 //コート数チェック
                 switch (court_num){
@@ -73,11 +82,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
 
+                //ペア決めシャッフル実行
                 Shuffle shuffle = new Shuffle();
                 shuffle.SetList(court_num * COURT_IN_PLAYER);
 
                 for (int court = 1; court <= court_num; court++){
                     for (int person = 1; person <= COURT_IN_PLAYER; person++){
+                        //コートイメージにプレイヤー番号を表示する
                         int answer = shuffle.GetShuffleList(player_num);
                         selectCourt(court, person, answer);
                     }
@@ -115,6 +126,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertDialog.show();
     }
 
+    /*コートイメージの初期化
+    * @Param なし
+    * @Author K.yasui
+    * */
     private void initImageView(){
         ImageView imgV;
         int ids[][] = new int[][]{
@@ -129,33 +144,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 imgV.setImageResource(R.drawable.icon_blank);
             }
         }
-//        //1コート
-//        imgV = findViewById(R.id.iv_court1_left1);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court1_left2);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court1_right1);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court1_right2);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        //2コート
-//        imgV = findViewById(R.id.iv_court2_left1);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court2_left2);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court2_right1);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court2_right2);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        //3コート
-//        imgV = findViewById(R.id.iv_court3_left1);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court3_left2);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court3_right1);
-//        imgV.setImageResource(R.drawable.icon_blank);
-//        imgV = findViewById(R.id.iv_court3_right2);
-//        imgV.setImageResource(R.drawable.icon_blank);
     }
 
     private void selectCourt(int court_num, int player_num, int answer){
